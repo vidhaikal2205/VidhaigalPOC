@@ -1,0 +1,56 @@
+@IsTest
+public class CommunityMemberConversionServiceTest {
+
+    @IsTest
+    static void testConvertRegistrationToContact_RecordType() {
+        // Step 1: Get the Community Member Record Type
+        RecordType communityRt = [
+            SELECT Id, DeveloperName, Name 
+            FROM RecordType 
+            WHERE SObjectType = 'Contact' 
+              AND DeveloperName = 'Community_Member' 
+            LIMIT 1
+        ];
+
+        System.assertNotEquals(null, communityRt, 'Community Member Record Type must exist');
+
+        // Step 2: Create a test Community Member Registration record
+        Community_Member_Registration_Form__c registration = new Community_Member_Registration_Form__c(
+            Salutation__c = 'Mr.',
+            First_Name__c = 'Test',
+            Last_Name__c = 'User',
+            Email__c = 'testuser@example.com',
+            Mobile_Number__c = '9999999999',
+            Gender__c = 'Male',
+            Occupation__c = 'Salaried',
+            Annual_Income__c = 50000,
+            State__c = 'Assam',
+            Address_Line_1__c = '123 Test St',
+            Address_Line_2__c = 'Apt 1',
+            City__c = 'Guwahati',
+            Zipcode__c = 781001,
+            Confirm_Email__c='testuser@example.com',
+            Proof_of_Identity__c='Aadhar'
+        );
+        insert registration;
+
+        // Step 3: Call the method to convert registration to Contact
+        System.Test.startTest();
+        Id contactId = CommunityMemberConversionService.convertRegistrationToContact(registration.Id);
+        System.Test.stopTest();
+
+        // Step 4: Retrieve the created Contact
+        Contact con = [
+            SELECT Id, FirstName, LastName, Email, RecordTypeId, RecordType.Name 
+            FROM Contact 
+            WHERE Id = :contactId
+        ];
+
+        // Step 5: Assert the Contact fields and Record Type
+        System.assertEquals('Test', con.FirstName);
+        System.assertEquals('User', con.LastName);
+        System.assertEquals('testuser@example.com', con.Email);
+        System.assertEquals(communityRt.Id, con.RecordTypeId, 'Contact must be created in Community Member Record Type');
+        System.assertEquals('Community Member', con.RecordType.Name, 'Record Type name must match Community Member');
+    }
+}

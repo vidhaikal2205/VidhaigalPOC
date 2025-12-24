@@ -1,0 +1,140 @@
+/* -------------------------------------------------------
+   FULL PAGE CARD - no extra spacing
+------------------------------------------------------- */
+.slds-card {
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+   box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+    padding: 25px;
+    width: 100%;          /* full width */
+    max-width: 100%;      /* remove max width constraint */
+    margin: 0;            /* remove spacing around card */
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------
+   FIELD SPACING
+------------------------------------------------------- */
+.col-gap lightning-input,
+.col-gap lightning-combobox {
+    margin-bottom: 20px;
+}
+
+/* -------------------------------------------------------
+   INPUT & COMBOBOX - true dark black & professional
+------------------------------------------------------- */
+.black-box .slds-input,
+.black-box input,
+.black-box textarea,
+.black-box .slds-combobox__input {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid #444444 !important;
+    border-radius: 6px;
+    padding: 12px 14px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset 0 1px 3px rgba(255,255,255,0.05);
+}
+
+/* Hover effect */
+.black-box .slds-input:hover,
+.black-box .slds-combobox__input:hover {
+    border-color: #888888 !important;
+    background-color: #111111 !important;
+}
+
+/* Focus effect */
+.black-box .slds-input:focus,
+.black-box .slds-combobox__input:focus {
+    border-color: #1E90FF !important;
+    box-shadow: 0 0 6px rgba(30,144,255,0.4) !important;
+    background-color: #111111 !important;
+    outline: none;
+}
+
+/* Placeholder text */
+.black-box .slds-input::placeholder,
+.black-box .slds-combobox__input::placeholder {
+    color: #cccccc !important;
+    font-weight: 400;
+}
+
+/* -------------------------------------------------------
+   LABEL STYLE - bold & professional
+------------------------------------------------------- */
+.slds-form-element__label {
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+/* -------------------------------------------------------
+   ERROR MESSAGE
+------------------------------------------------------- */
+.slds-text-color_error {
+    color: #d10000 !important;
+    font-size: 0.85rem;
+    margin-top: -4px;
+    margin-bottom: 10px;
+}
+
+.required-upload lightning-file-upload {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 4px 0;
+}
+
+.required-upload.error lightning-file-upload {
+    border: 1px solid #c23934; /* Salesforce red */
+    background: #fdf2f0;
+}
+
+/* -------------------------------------------------------
+   SUBMIT BUTTON - blue & clean
+------------------------------------------------------- */
+/* -------------------------------------------------------
+   SUBMIT BUTTON - blue when enabled
+------------------------------------------------------- */
+/* -------------------------------------------------------
+   SUBMIT BUTTON - blue background, white text always*/
+.submit-btn 
+{
+    /* ENABLED STATE: Dark Blue */
+    --slds-c-button-brand-color-background: #0070d2;
+    --slds-c-button-brand-color-border: #0070d2;
+    --slds-c-button-text-color: white;
+
+    /* DISABLED STATE: Light Blue but VISIBLE */
+    
+    --slds-c-button-brand-color-background-disabled: #4aa3ff;
+    --slds-c-button-brand-color-border-disabled: #4aa3ff;
+    --slds-c-button-text-color-disabled: white;
+
+    /* Make sure it's visible */
+    --slds-c-button-brand-opacity-disabled: 1;
+    --slds-c-button-brand-opacity-background-disabled: 1;
+}
+
+
+
+
+
+
+/* -------------------------------------------------------
+   RESPONSIVE - 2 columns for smaller screens
+------------------------------------------------------- */
+@media (max-width: 768px) {
+    .slds-grid {
+        gap: 0 !important;
+    }
+
+    .slds-col {
+        width: 100% !important;
+    }
+}

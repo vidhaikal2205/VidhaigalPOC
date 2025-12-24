@@ -1,0 +1,214 @@
+<template>
+    <!-- 1. MAIN CONTAINER -->
+    <div style="min-height:100vh; display:flex; justify-content:center; align-items:flex-start;
+ background:#f4f6f9;">
+        <lightning-card style="width:850px; padding:20px; box-sizing:border-box;">
+
+            <!-- 2. TITLE -->
+            <div style="text-align:center; 
+            font-size:2.2rem; 
+            font-weight:800; 
+            margin-bottom:25px; 
+            color:#1a1a1a;">
+            Registration Form
+            </div>
+
+            <!-- 3. GRID START -->
+            <div class="slds-grid slds-wrap">
+
+                <!-- 4. LEFT COLUMN -->
+                <div class="slds-col slds-size_1-of-2" style="padding-right:15px;">
+
+                    <!-- 4.1 Salutation -->
+                    <lightning-combobox 
+                    label="Salutation"
+                    data-field="salutation" 
+                    value={form.salutation} 
+                    options={salutationOptions} 
+                    onchange={handleChange} 
+                    class="large-label" required>
+                    </lightning-combobox>
+
+                    <!-- 4.2 First Name -->
+                    <lightning-input 
+                    label="First Name"
+                     data-field="firstName" 
+                     value={form.firstName} 
+                     onchange={handleChange} required>
+                    </lightning-input>
+
+                    <!-- 4.3 Last Name -->
+                    <lightning-input 
+                    label="Last Name" 
+                    data-field="lastName"
+                     value={form.lastName}
+                      onchange={handleChange} 
+                      required>
+                    </lightning-input>
+
+                    <!-- 4.4 Email -->
+                    <lightning-input 
+                    label="Email" 
+                    type="text" 
+                    data-field="email"
+                    value={form.email}
+                    onchange={handleEmailChange}
+                    onblur={handleEmailBlur}
+                    class={emailClass} 
+                    required>
+                    </lightning-input>
+
+                    <!-- 4.5 Confirm Email -->
+                    <lightning-input 
+                    label="Confirm Email"
+                     type="text" 
+                     data-field="confirmEmail" 
+                     value={form.confirmEmail} 
+                     onchange={handleConfirmEmailChange}
+                      onblur={handleConfirmEmailBlur} 
+                      class={confirmEmailClass}
+                       required>
+                    </lightning-input>
+
+                    <!-- 4.6 Mobile Number -->
+                    <lightning-input 
+                    label="Mobile Number"
+                     type="tel" 
+                     data-field="mobileNumber" 
+                     value={form.mobileNumber}
+                    onchange={handleMobileChange}
+                    onblur={handleMobileBlur}
+                    class={mobileClass} required>
+                    </lightning-input>
+
+                    <!-- 4.7 Gender -->
+                    <lightning-combobox 
+                    label="Gender" 
+                    data-field="gender" 
+                    value={form.gender} 
+                    options={genderOptions} 
+                    onchange={handleChange} 
+                    required>
+                    </lightning-combobox>
+
+                    <!-- 4.8 Occupation -->
+                    <lightning-combobox 
+                    label="Occupation" 
+                    data-field="occupation" 
+                    value={form.occupation} 
+                    options={occupationOptions} 
+                    onchange={handleChange} 
+                    required>
+                    </lightning-combobox>
+
+                    <!-- 4.9 Annual Income -->
+                    <lightning-input 
+                    label="Annual Income" 
+                    data-field="annualIncome" 
+                    value={form.annualIncome} 
+                    onchange={handleChange}>
+                    </lightning-input>
+
+                </div>
+
+                <!-- 5. RIGHT COLUMN -->
+                <div class="slds-col slds-size_1-of-2" style="padding-left:15px;">
+
+                    <!-- 5.1 Address Line 1 -->
+                    <lightning-input 
+                    label="Address Line 1" 
+                    data-field="addressLine1" 
+                    value={form.addressLine1} 
+                    onchange={handleChange} 
+                    required>
+                    </lightning-input>
+
+                    <!-- 5.2 Address Line 2 -->
+                    <lightning-input 
+                    label="Address Line 2" 
+                    data-field="addressLine2" 
+                    value={form.addressLine2} 
+                    onchange={handleChange}>
+                    </lightning-input>
+
+                    <!-- 5.3 City -->
+                    <lightning-input
+                     label="City"
+                      data-field="city" 
+                      value={form.city} 
+                      onchange={handleChange}
+                       required>
+                    </lightning-input>
+
+                    <!-- 5.4 State -->
+                    <lightning-combobox
+                     label="State" 
+                     data-field="state" 
+                     value={form.state} 
+                     options={stateOptions}
+                      onchange={handleChange} 
+                      required>
+                    </lightning-combobox>
+
+                    <!-- 5.5 Country -->
+                    <lightning-combobox 
+                    label="Country" 
+                    data-field="country" 
+                    value={form.country} 
+                    options={countryOptions} 
+                    onchange={handleChange}
+                     required>
+                    </lightning-combobox>
+
+                    <!-- 5.6 Zip Code -->
+                    <lightning-input 
+                    label="Zip Code" 
+                    data-field="zipcode" 
+                    value={form.zipcode} 
+                    onchange={handleChange}
+                    required>
+                    </lightning-input>
+
+                    <!-- 5.7 Proof of Identity -->
+                    <lightning-combobox
+                     label="Proof of Identity"
+                      data-field="proofOfIdentity" 
+                      value={form.proofOfIdentity} 
+                      options={proofOfIdentityOptions} 
+                      onchange={handleChange} 
+                      required>
+                    </lightning-combobox>
+
+                    
+                    
+                    <!-- 5.8 File Upload -->
+                    <div style="margin-top:10px;">
+                        <label>Upload ID Proof (Max File upload size 5MB)<span style="color:red">*</span></label>
+                        <input type="file" onchange={handleFileChange} accept=".pdf,.jpg,.jpeg,.png" />
+                        <template if:true={fileName}>
+                            <div style="margin-top:5px;">
+                                Selected File: {fileName} 
+                                <button type="button" onclick={removeFile}>Remove</button>
+                            </div>
+                        </template>
+                    </div>>
+
+                    
+                </div>
+
+            </div> <!-- END GRID -->
+
+            <!-- 6. SUBMIT BUTTON -->
+            <div style="text-align:center; margin-top:25px;">
+                <lightning-button 
+                    label="Submit" 
+                    onclick={handleSubmit} 
+                    disabled={disableSubmit}
+                    variant="brand"
+                    class="submit-btn">
+                </lightning-button>
+            </div>
+
+        </lightning-card>
+    </div>
+</template>

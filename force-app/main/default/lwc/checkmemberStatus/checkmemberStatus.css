@@ -1,0 +1,62 @@
+.container {
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+.label {
+    font-size: 14px;
+    font-weight: bold;   /* keep only one declaration */
+    color: #444;
+    display: block;      /* ensures label takes full width */
+    margin-bottom: 10px; /* adds space below the label */
+}
+.inputBox {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 2px solid #2f85fc;   /* Blue highlighted border */
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.inputBox:focus {
+    outline: none;
+    border-color: #0054d1;
+    box-shadow: 0 0 3px #7ab4ff;
+}
+
+.button-section {
+    margin-top: 10px;
+}
+
+.active-btn {
+    opacity: 1 !important;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 5px;
+}
+
+/* Highlight for brand button */
+.slds-button_brand.active-btn {
+    background-color: #2f85fc;   /* custom blue */
+    border-color: #2f85fc;
+    color: #fff;
+    box-shadow: 0 0 6px rgba(47,133,252,0.6); /* glow effect */
+}
+
+/* Highlight for neutral button */
+.slds-button_neutral.active-btn {
+    background-color: #f4f6f9;
+    border-color: #2f85fc;
+    color: #2f85fc;
+    box-shadow: 0 0 6px rgba(47,133,252,0.4);
+}

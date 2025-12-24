@@ -1,0 +1,34 @@
+<template>
+    <div class="container slds-m-top_large">
+        <h2 class="title">Check Member Status</h2>
+
+        <label class="label">Enter your Email</label>
+        <input type="email"
+               class="inputBox"
+                 style="width:300px;"
+
+               value={email}
+               onchange={handleEmailChange}
+
+               placeholder="Enter Email" />
+
+        <div class="button-section slds-m-top_medium">
+            <button class="slds-button slds-button_brand active-btn"
+                    onclick={checkStatus}>
+                Check Status
+            </button>
+
+            <button class="slds-button slds-button_neutral active-btn"
+                    onclick={resetForm}>
+                Reset
+            </button>
+        </div>
+
+        <!-- Status message inside custom container -->
+        <template if:true={statusMessage}>
+            <p class="slds-m-top_medium slds-text-color_success slds-box slds-theme_alert-texture">
+                {statusMessage}
+            </p>
+        </template>
+    </div>
+</template>
