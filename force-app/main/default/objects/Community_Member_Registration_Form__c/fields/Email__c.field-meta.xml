@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Primary email address of the registrant. Used for communication, verification, and user account creation.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Email Should be in format , abc@example.com</inlineHelpText>
+    <label>Email</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>true</unique>
+</CustomField>

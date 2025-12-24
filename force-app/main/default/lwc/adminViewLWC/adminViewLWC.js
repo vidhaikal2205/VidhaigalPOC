@@ -6,8 +6,7 @@ import getFileDetails from '@salesforce/apex/IdPreviewController.getFileDetails'
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { refreshApex } from '@salesforce/apex';
 
-export default class AdminViewLWC extends LightningElement 
-{
+export default class AdminViewLWC extends LightningElement {
     records;
     wiredResult;
     isLoading = true;
@@ -19,6 +18,9 @@ export default class AdminViewLWC extends LightningElement
     isRejectModalOpen = false;
 
     contentVersionId;
+    fileType;
+    isPdf = false;
+    isImage = false;
     selectedRecordId;
     approveReason = '';
     rejectReason = '';
@@ -74,26 +76,40 @@ export default class AdminViewLWC extends LightningElement
     }
 
     // IMAGE PREVIEW 
-    get fileUrl() {
-        return this.contentVersionId
-            ? `/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Jpg&versionId=${this.contentVersionId}`
-            : '';
+   get fileUrl() {
+    if (!this.contentVersionId) return '';
+
+    // Image
+    if (this.isImage) {
+        return `/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Jpg&versionId=${this.contentVersionId}`;
     }
 
+    // PDF
+    if (this.isPdf) {
+        return `/sfc/servlet.shepherd/version/renditionDownload?rendition=SVGZ&versionId=${this.contentVersionId}`;
+    }
+
+    return '';
+}
     async handleRowAction(event) {
         const actionName = event.detail.action.name;
         const row = event.detail.row;
 
         if (actionName === 'PreviewID') {
-            try {
-                this.contentVersionId = await getFileDetails({ recordId: row.Id });
-                this.isModalOpen = true;
-            } catch {
-                this.showToast('Error', 'Unable to load ID proof', 'error');
-            }
-            return;
-        }   
+        try {
+        const result = await getFileDetails({ recordId: row.Id });
+        this.contentVersionId = result.versionId;
+        this.fileType = result.fileType;
 
+        this.isPdf = this.fileType === 'PDF';
+        this.isImage = ['JPG', 'JPEG', 'PNG'].includes(this.fileType);
+
+        this.isModalOpen = true;
+    } catch {
+        this.showToast('Error', 'Unable to load ID proof', 'error');
+    }
+}
+       
         if (actionName === 'ViewDetails') {
             this.selectedRecordId = row.Id;
             this.isDetailsModalOpen = true;
@@ -110,63 +126,76 @@ export default class AdminViewLWC extends LightningElement
         }
     }
 
-    handleReasonChange(event) 
-    
-    {
+    handleReasonChange(event) {
         this.approveReason = event.target.value;
         this.rejectReason = event.target.value;
+        
+    }
+    handleCommentChange(event) {
+        this.addComment = event.target.value;   
     }
 
-    /*closeModal() {
-        this.isModalOpen = false;
-    } */
+    closeModal() {
+        this.isModalOpen = false;;
+    }
 
-    async confirmApprove()
+  async confirmApprove()
     {
         // If selected RecordId exists, treat it as approval
-        if (this.selectedRecordId) 
+        if (this.selectedRecordId)
         {
-            const recordId = this.selectedRecordId;
-
+            const recordId = this.selectedRecordId;                                                   
             try {
                  //Convert registration to Contact
                 const contactId = await convertRegistrationToContact({ registrationId: recordId });
-	            console.log('Contact created with Id:', contactId);
-
-    
-            /*{
-                if (!this.approveReason) 
-                    {
-                        this.showToast('Error', 'Approval reason is required', 'error');
-                        return; 
-                } */
-
-        
+                console.log('Contact created with Id:', contactId);
+ 
+   
+                   
             await updateStatus({
                 recordId: this.selectedRecordId,
                 status: 'Approved',
                 approveReason: this.approveReason
             });
-
+ 
             //Show message
             this.showToast('Success', 'Record Approved & Contact Created', 'success');
             //this.showToast('Success', 'Community Member Approved', 'success');
-
-
+ 
             this.records = this.records.filter(r => r.Id !== this.selectedRecordId);
             await refreshApex(this.wiredResult);
             this.closeApproveModal();
-
+ 
         } catch (error) {
             this.showToast('Error', error.body.message, 'error');
         }
     }
     }
-    
-    
+  /*  async confirmApprove() {
+      
+        
+        try {
 
-    async confirmReject() 
-    {
+                await updateStatus({
+                recordId: this.selectedRecordId,
+                status: 'Approved',
+                approveReason: this.approveReason
+            });
+            
+
+            this.showToast('Success', 'Community Member Approved', 'success');
+
+            this.records = this.records.filter(r => r.Id !== this.selectedRecordId);
+            refreshApex(this.wiredResult);
+            this.closeApproveModal();
+        }
+            
+        catch (error) {
+            this.showToast('Error', error.body.message, 'error');
+        }
+    }*/
+
+    async confirmReject() {
         if (!this.rejectReason) {
             this.showToast('Error', 'Rejection reason is required', 'error');
             return;
@@ -176,7 +205,8 @@ export default class AdminViewLWC extends LightningElement
             await updateStatus({
                 recordId: this.selectedRecordId,
                 status: 'Rejected',
-                rejectReason: this.rejectReason
+                rejectReason: this.rejectReason,
+                addComment: this.addComment
             });
 
             this.showToast('Success', 'Community Member Rejected', 'success');

@@ -2,7 +2,7 @@
 * @File Name : CommunityMemberController .cls
 * @Description :This class is to get the community members who's status is pending
 * @Author :Sivalingam S
-* @Last Modified On : December 9, 2025
+* @Last Modified On : December 19, 2025
 
 *==============================================================================
 * Ver | Date | Author | Modification
@@ -23,10 +23,10 @@ public class CommunityMemberController
     }
     
     @AuraEnabled
-    public static void updateStatus(Id recordId, String status, string approveReason, string rejectReason)
+    public static void updateStatus(Id recordId, String status, string approveReason, string rejectReason, string addComment)
     {
       
-       update new Community_Member_Registration_Form__c(Id = recordId, Approval_Status__c =status, Approve_Reason__c=approveReason, Rejection_Reason__c=rejectReason);
+       update new Community_Member_Registration_Form__c(Id = recordId, Approval_Status__c =status, Approve_Reason__c=approveReason, Rejection_Reason__c=rejectReason, Additional_Comments__c=addComment);
       
     }
     

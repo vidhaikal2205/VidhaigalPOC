@@ -2,7 +2,7 @@
 * @File Name : TestCommunityMemberController .cls
 * @Description :This class is to get the community members who's status is pending
 * @Author :Sivalingam S
-* @Last Modified On : December 11, 2025
+* @Last Modified On : December 20, 2025
 
 *==============================================================================
 * Ver | Date | Author | Modification
@@ -93,12 +93,12 @@ public class TestCommunityMemberController
         ];
 
         System.Test.startTest();
-        CommunityMemberController.updateStatus(rec.Id, 'Approved');
+        CommunityMemberController.updateStatus(rec.Id, 'Approved','Good',null,null);
         System.Test.stopTest();
 
         // Query updated record
         Community_Member_Registration_Form__c updatedRec = [
-            SELECT Id, Approval_Status__c 
+            SELECT Id, Approval_Status__c, Approve_Reason__c
             FROM Community_Member_Registration_Form__c 
             WHERE Id = :rec.Id
         ];
@@ -108,5 +108,11 @@ public class TestCommunityMemberController
             updatedRec.Approval_Status__c,
             'The status should be updated to Approved'
         );
+        System.assertEquals(
+            'Good',
+            updatedRec.Approve_Reason__c,
+            'The status should be updated to Approved'
+        );
+        
     }
 }
