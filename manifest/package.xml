@@ -32,5 +32,22 @@
         <members>*</members>
         <name>StaticResource</name>
     </types>
+     <types>
+    <members>Community_Member_Registration_Form__c</members> <!-- Retrieve a specific custom object and its fields -->
+    <name>CustomObject</name>
+</types>
+<types>
+    <members>*</members> <!-- Retrieve all Lightning pages -->
+    <name>FlexiPage</name>
+</types>
+<types>
+        <members>Community_Member_Registration_Form__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Vidhaigal_Community</members> <!-- Replace MyCustomApp with the app's API name -->
+        <name>CustomApplication</name>
+    </types>
+   
     <version>65.0</version>
 </Package>
