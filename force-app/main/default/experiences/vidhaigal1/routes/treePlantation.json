@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "f23458c7-6838-4721-ad7a-2804608d11f6",
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "configurationTags" : [ ],
+  "devName" : "TreePlantation__c",
+  "id" : "f8464697-15db-42e2-aebf-8f8d6e542f7e",
+  "label" : "Tree Plantation",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-tree-plantation",
+  "type" : "route",
+  "urlPrefix" : "tree-plantation"
+}

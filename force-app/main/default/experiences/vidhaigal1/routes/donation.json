@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "17427fea-09b2-469d-b1c9-afbea1d676a6",
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "configurationTags" : [ ],
+  "devName" : "Donation__c",
+  "id" : "8272b9df-4c53-468f-a8fa-22d4ad218709",
+  "label" : "Donation",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-donation",
+  "type" : "route",
+  "urlPrefix" : "donation"
+}

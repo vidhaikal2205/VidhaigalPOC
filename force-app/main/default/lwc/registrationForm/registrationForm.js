@@ -12,6 +12,7 @@ import COUNTRY from '@salesforce/schema/Community_Member_Registration_Form__c.Co
 import STATE from '@salesforce/schema/Community_Member_Registration_Form__c.State__c';
 import OCCUPATION from '@salesforce/schema/Community_Member_Registration_Form__c.Occupation__c';
 import PROOFOFIDENTITY from '@salesforce/schema/Community_Member_Registration_Form__c.Proof_of_Identity__c';
+import password from '@salesforce/schema/Community_Member_Registration_Form__c.Password__c';
 
 export default class CommunityRegistrationFormWithFile extends LightningElement {
 
@@ -32,9 +33,21 @@ export default class CommunityRegistrationFormWithFile extends LightningElement 
         state: '',
         occupation: '',
         proofOfIdentity: '',
-        city: ''
+        city: '',
+        password: ''
     };
+    passwordType = 'password';
+toggleLabel = 'Show Password';
+passwordMismatch = false;
 
+form = {
+    ...this.form,
+    password: '',
+    confirmPassword: ''
+};
+passwordIcon = 'utility:preview';
+
+  
     // 2. picklist options
     @track salutationOptions = [];
     @track genderOptions = [];
@@ -99,6 +112,37 @@ export default class CommunityRegistrationFormWithFile extends LightningElement 
             this.clearFieldError('email');
             this.isEmailDuplicate = false;
         }
+        handlePasswordChange(event) {
+    this.form.password = event.target.value;
+    
+ this.validatePasswordMatch();
+}
+
+handleConfirmPasswordChange(event) {
+    this.form.confirmPassword = event.target.value;
+    this.validatePasswordMatch();
+}
+
+validatePasswordMatch() {
+    this.passwordMismatch =
+        this.form.password &&
+        this.form.confirmPassword &&
+        this.form.password !== this.form.confirmPassword;
+}
+
+togglePassword() {
+    if (this.passwordType === 'password') {
+        this.passwordType = 'text';
+        this.passwordIcon = 'utility:hide'; // eye closed
+    } else {
+        this.passwordType = 'password';
+        this.passwordIcon = 'utility:preview'; // eye open
+    }
+}
+
+
+
+
 
         handleEmailBlur() {
         const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -229,6 +273,21 @@ export default class CommunityRegistrationFormWithFile extends LightningElement 
 
     // 12. submit form
     handleSubmit(){
+
+        if (this.passwordMismatch) {
+        this.showToast('Error', 'Passwords do not match', 'error');
+        return;
+    }
+
+    // 🔐 Password pattern validation
+    const passwordInput = this.template.querySelector(
+        'lightning-input[data-field="password"]'
+    );
+
+    if (passwordInput && !passwordInput.checkValidity()) {
+        passwordInput.reportValidity();
+        return;
+    }
         if(this.disableSubmit){
             this.showToast('Error','Fill all fields correctly and upload ID Proof','error');
             return;
@@ -254,17 +313,24 @@ export default class CommunityRegistrationFormWithFile extends LightningElement 
             proofOfIdentity: this.form.proofOfIdentity,
             addressLine1: this.form.addressLine1,
             addressLine2: this.form.addressLine2,
-            approvalStatus: 'Pending'
+            approvalStatus: 'Pending',
+             password: this.form.password
         })
         .then(()=> {
             this.showToast('Success','Registration Successful','success');
             this.resetForm();
         })
         
-        .catch(err => {
-            console.error(err);
-            this.showToast('Error','Error saving registration','error');
-        });
+       .catch(err => {
+    console.error('Apex Error:', JSON.stringify(err));
+
+    let message = 'Unknown error';
+    if (err && err.body && err.body.message) {
+        message = err.body.message;
+    }
+
+    this.showToast('Error', message, 'error');
+});
     }
 
     // 13. reset form

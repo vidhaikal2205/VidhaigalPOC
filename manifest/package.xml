@@ -48,6 +48,50 @@
         <members>Vidhaigal_Community</members> <!-- Replace MyCustomApp with the app's API name -->
         <name>CustomApplication</name>
     </types>
+
+     <!-- Contact Object (includes fields, validation rules, etc.) -->
+    <types>
+        <members>Contact</members>
+        <name>CustomObject</name>
+    </types>
+
+    <!-- Contact Page Layouts -->
+    <types>
+        <members>Contact-*</members>
+        <name>Layout</name>
+    </types>
+
+    <!-- Contact Lightning Record Pages -->
+    <types>
+        <members>Contact_*</members>
+        <name>FlexiPage</name>
+    </types>
+
+ <!-- Experience Cloud Site Pages -->
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+
+    <!-- Lightning Pages used inside Experience Cloud -->
+    <types>
+        <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+
+    <!-- Navigation Menu -->
+    <types>
+        <members>*</members>
+        <name>NavigationMenu</name>
+    </types>
+
+    <!-- Network (Community) -->
+    <types>
+        <members>*</members>
+        <name>Network</name>
+    </types>
+
+
    
     <version>65.0</version>
 </Package>

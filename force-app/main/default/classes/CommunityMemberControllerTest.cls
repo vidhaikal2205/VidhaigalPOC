@@ -10,92 +10,174 @@
 
 @IsTest
 public class CommunityMemberControllerTest {
-
-    // Utility method to create Base64 file content
-    private static String getBase64Sample(Integer sizeInKB) {
-        Blob b = Blob.valueOf(String.valueOf(sizeInKB));
+   
+    // ------------------ UTILITY: BASE64 FILE ------------------
+    private static String getBase64Data() {
+        Blob b = Blob.valueOf('Sample File Content');
         return EncodingUtil.base64Encode(b);
     }
 
-    // ------------------ TEST DUPLICATE EMAIL ------------------
+    // ------------------ DUPLICATE EMAIL (Custom Object) ------------------
     @IsTest
-    static void testCheckDuplicateEmail() {
-        Community_Member_Registration_Form__c reg = new Community_Member_Registration_Form__c(
-            Salutation__c='Mr.',
-            First_Name__c = 'Test1',
+    static void testCheckDuplicateEmail_FromRegistration() {
+
+        insert new Community_Member_Registration_Form__c(
+          	Salutation__c='Mr.',
+            First_Name__c = 'Test',
             Last_Name__c = 'User',
-            Email__c = 'test@gmail.com', 
-            Confirm_Email__c = 'test@gmail.com',
+            Email__c = 'duplicate@gmail.com',
+            Confirm_Email__c = 'duplicate@gmail.com',
             Mobile_Number__c = '9999999999',
             Gender__c = 'Male',
             Occupation__c = 'Salaried',
-            Address_Line_1__c = 'Street 1',
-            Address_Line_2__c = 'Street 2',
-            State__c = 'Bihar',
+            Address_Line_1__c = 'Addr1',
+            Address_Line_2__c = 'Addr2',
+            State__c = 'ASSAM',
             Country__c = 'India',
-            City__c = 'Patna',
+            City__c = 'BLR',
             Proof_of_Identity__c = 'Aadhar',
-            Zipcode__c = 800001,
+            Zipcode__c = 560001,
             Annual_Income__c = 50000,
-            Approval_Status__c = 'Pending'
+            Approval_Status__c = 'Pending',
+            Password__c = 'Test@123'
+    
         );
-        insert reg;
 
         System.Test.startTest();
-        Boolean result = CommunityRegistrationController.checkDuplicateEmail('test@gmail.com');
+        Boolean result = CommunityRegistrationController.checkDuplicateEmail('duplicate@gmail.com');
         System.Test.stopTest();
 
-        System.assertEquals(true, result, 'Duplicate email should return true');
+        System.assertEquals(true, result);
     }
 
-    // ------------------ TEST DUPLICATE MOBILE ------------------
+    // ------------------ DUPLICATE EMAIL (Contact) ------------------
     @IsTest
-    static void testCheckDuplicateMobile() {
-        Community_Member_Registration_Form__c reg = new Community_Member_Registration_Form__c(
+    static void testCheckDuplicateEmail_FromContact() {
+
+        insert new Contact(
+            LastName = 'ContactUser',
+            Email = 'contact@gmail.com',
+            Occupation__c='Salaried',
+            Member_Status__c='Active',
+            Password__c = 'Test@123'
+        );
+
+        System.Test.startTest();
+        Boolean result = CommunityRegistrationController.checkDuplicateEmail('contact@gmail.com');
+        System.Test.stopTest();
+
+        System.assertEquals(true, result);
+    }
+
+    // ------------------ DUPLICATE MOBILE (Custom Object) ------------------
+    @IsTest
+    static void testCheckDuplicateMobile_FromRegistration() {
+
+        insert new Community_Member_Registration_Form__c(
             Salutation__c='Mr.',
-            First_Name__c = 'Test2',
+            First_Name__c = 'Mobile',
             Last_Name__c = 'User',
-            Email__c = 'test2@gmail.com', 
-            Confirm_Email__c = 'test2@gmail.com',
+            Email__c = 'mobile@gmail.com',
+            Confirm_Email__c = 'mobile@gmail.com',
             Mobile_Number__c = '8888888888',
             Gender__c = 'Male',
             Occupation__c = 'Salaried',
-            Address_Line_1__c = 'Street 1',
-            Address_Line_2__c = 'Street 2',
-            State__c = 'Bihar',
+            Address_Line_1__c = 'Addr1',
+            Address_Line_2__c = 'Addr2',
+            State__c = 'ASSAM',
             Country__c = 'India',
-            City__c = 'Patna',
+            City__c = 'BLR',
             Proof_of_Identity__c = 'Aadhar',
-            Zipcode__c = 800001,
+            Zipcode__c = 560001,
             Annual_Income__c = 50000,
-            Approval_Status__c = 'Pending'
+            Approval_Status__c = 'Pending',
+           Password__c = 'Test@123'
         );
-        insert reg;
 
         System.Test.startTest();
         Boolean result = CommunityRegistrationController.checkDuplicateMobile('8888888888');
         System.Test.stopTest();
 
-        System.assertEquals(true, result, 'Duplicate mobile should return true');
+        System.assertEquals(true, result);
     }
 
-    // ------------------ SUCCESSFUL REGISTRATION + FILE ------------------
+    // ------------------ DUPLICATE MOBILE (Contact) ------------------
+    @IsTest
+    static void testCheckDuplicateMobile_FromContact() {
+
+        insert new Contact(
+            LastName = 'MobileContact',
+            MobilePhone = '7777777777',
+            Occupation__c='Salaried',
+            Member_Status__c='Active',
+            Password__c = 'Test@123'
+        );
+
+        System.Test.startTest();
+        Boolean result = CommunityRegistrationController.checkDuplicateMobile('7777777777');
+        System.Test.stopTest();
+
+        System.assertEquals(true, result);
+    }
+
+    // ------------------ SAVE REGISTRATION + FILE SUCCESS ------------------
     @IsTest
     static void testSaveRegistrationWithFile_Success() {
-        String base64Data = getBase64Sample(10); // 10 KB file
+
+        String base64Data = getBase64Data();
 
         System.Test.startTest();
         Id regId = CommunityRegistrationController.saveRegistrationWithFile(
-            'Mr.', 'John', 'Doe', '9999999999', 'john@sample.com', 'john@sample.com',
-            'Male', 'Salaried', 'Karnataka', '500000', 'India', 'Bengaluru', '560001',
-            'Aadhar', 'Address1', 'Address2', 'Pending', 'idproof.pdf', base64Data, 'application/pdf'
+            'Mr.',
+            'John',
+            'Doe',
+            '9999999999',
+            'john@gmail.com',
+            'john@gmail.com',
+            'Male',
+            'Salaried',
+            'Karnataka',
+            '500000',
+            'India',
+            'Bengaluru',
+            '560001',
+            'Aadhar',
+            'Address Line 1',
+            'Address Line 2',
+            'Pending',
+            'Test@123',
+            'idproof.pdf',
+             base64Data,
+            'application/pdf'
         );
         System.Test.stopTest();
 
-        System.assertNotEquals(null, regId, 'Record Id should be returned');
-        System.assertEquals(1, [
-            SELECT COUNT() FROM ContentVersion WHERE FirstPublishLocationId = :regId
-        ]);
-    
+        System.assertNotEquals(null, regId);
+
+        // Validate File Upload
+        Integer fileCount = [
+            SELECT COUNT()
+            FROM ContentVersion
+            WHERE FirstPublishLocationId = :regId
+        ];
+        System.assertEquals(1, fileCount);
+    }
+
+    // ------------------ NEGATIVE: BLANK EMAIL ------------------
+    @IsTest
+    static void testCheckDuplicateEmail_Blank() {
+       System.Test.startTest();
+        Boolean result = CommunityRegistrationController.checkDuplicateEmail('');
+       System.Test.stopTest();
+        System.assertEquals(false, result);
+    }
+
+    // ------------------ NEGATIVE: BLANK MOBILE ------------------
+    @IsTest
+    static void testCheckDuplicateMobile_Blank() {
+       System.Test.startTest();
+        Boolean result = CommunityRegistrationController.checkDuplicateMobile('');
+        System.Test.stopTest();
+        System.assertEquals(false, result);
     }
 }

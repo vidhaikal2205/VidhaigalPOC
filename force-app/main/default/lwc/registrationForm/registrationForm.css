@@ -95,6 +95,34 @@
     background: #fdf2f0;
 }
 
+
+
+.password-container {
+      margin-bottom: 20px;   
+}
+
+.password-input {
+    padding-right: 40px; 
+}
+
+.eye-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #6b7280; /* grey like login */
+}
+
+.eye-toggle:hover {
+    color: #0176d3; /* Salesforce blue */
+}
+
+
+
 /* -------------------------------------------------------
    SUBMIT BUTTON - blue & clean
 ------------------------------------------------------- */

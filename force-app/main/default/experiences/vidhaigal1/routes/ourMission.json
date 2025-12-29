@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "ff02d429-e4a5-45bb-952c-f8c0d074f784",
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "configurationTags" : [ ],
+  "devName" : "OurMission__c",
+  "id" : "e1f10fa2-9638-4ca5-9686-5c48f6ec3144",
+  "label" : "OurMission",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-ourmission",
+  "type" : "route",
+  "urlPrefix" : "ourmission"
+}

@@ -1,0 +1,71 @@
+{
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "17427fea-09b2-469d-b1c9-afbea1d676a6",
+  "label" : "Donation",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "b44e6c50-f92d-4df1-96b0-e039aec67e46",
+          "columns" : [ {
+            "UUID" : "c52417a1-b4d8-493e-b865-19261ffb3ba8",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "b44e6c50-f92d-4df1-96b0-e039aec67e46",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "flowArguments" : "",
+            "flowName" : "Donation_Page_Flow"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "b3112746-8197-42b3-a9cc-404ec32d08aa",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "c52417a1-b4d8-493e-b865-19261ffb3ba8",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9302687b-84fe-449c-9458-34680ea9cfc3",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Donation"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "73591d0f-a8e8-41d5-9cbb-f1430bb11f6b",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "25567728-9409-406d-b81f-affb36d8f4e5",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-donation"
+}

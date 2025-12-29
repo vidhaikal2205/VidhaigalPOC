@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "2dd249f7-ec87-4b41-a412-34024ea30656",
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "configurationTags" : [ ],
+  "devName" : "Flow",
+  "id" : "bd845ab3-fc28-4222-824e-822adde92239",
+  "label" : "Flow",
+  "pageAccess" : "UseParent",
+  "routeType" : "flow",
+  "type" : "route",
+  "urlPrefix" : "DonationPageFlow"
+}

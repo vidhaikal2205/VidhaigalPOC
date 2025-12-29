@@ -1,0 +1,233 @@
+{
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "componentName" : "siteforce:sldsTwoCol84SidebarFeaturedLayout",
+  "dataProviders" : [ ],
+  "id" : "a39704b5-ecb4-40be-8e41-730f60988844",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "bannerText" : "A place where you can uplift a persons life",
+        "bannerTextWithKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineArticles\">articles</a> and <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "bannerTextWithoutKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "pageType" : "",
+        "showSubTopics" : true,
+        "title" : "Welcome!",
+        "uniqueNameOrId" : ""
+      },
+      "componentName" : "forceCommunity:headline",
+      "id" : "fe2a75c6-468d-4245-a236-6177a3b11790",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cbb591b1-c67a-47d1-89b8-20c5cff7de9c",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<h1><strong style=\"font-family: tahoma; font-size: 26px;\">Our Services</strong></h1>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "40546873-e0f4-4d40-933b-95a2e6fc0cc3",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cf17014e-74d1-4e7e-9b22-edc20c4073b6",
+    "regionName" : "featured",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<h1><strong style=\"font-family: tahoma; font-size: 26px;\">Our History</strong>&nbsp;</h1>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "21ce8dfe-3776-406d-9438-000db5c53f0b",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<h2 style=\"text-align: justify;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.X11.1}\"></h2>\n<h2 style=\"text-align: justify;\"><br></h2>\n<p style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Established in 2011, Vidhaigal NGO has dedicated the past 13+ years to fostering social harmony and environmental sustainability. Through collaborative efforts with various stakeholders, the organization has implemented impactful initiatives including tree plantations, environmental awareness campaigns, and educational support programs for underprivileged children. Vidhaigal continues to inspire and lead by example, striving to create a balanced and prosperous future for all.</span></p>\n<p>&nbsp;</p>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "edc1d329-ffdc-4a6b-a532-1e7c1a8d01de",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a990b14a-16c0-48ce-98dd-b7d74586d512",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<h3 style=\"text-align: center;\"><strong>Empowering Tribal Communities</strong></h3><h5 style=\"text-align: justify;\"><span style=\"font-family: verdana;\">Vidhaigal NGO assists over 300 Tribal people across multiple villages.</span></h5>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "7d3208b0-4f27-485c-be61-4f4bf3420ee8",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<h2 style=\"text-align: center;\"><strong>Reviving Trees</strong></h2><h5><span style=\"font-family: verdana;\">Vidhaigal NGO transplanting the uprooted trees to suitable locations.</span></h5>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "73b83eef-7b89-4a0d-a7a0-3ef81cd6a959",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "richTextValue" : "<h2 style=\"text-align: center;\"><strong>Agricultural Training</strong></h2><h5><span style=\"font-family: verdana;\">Vidhaigal NGO providing hands-on experience in planting seedlings, plowing, mechanized sowing, preparing insect repellents, and weeding.</span></h5>"
+      },
+      "componentName" : "forceCommunity:richTextInline",
+      "id" : "4882b3df-7c11-409e-9f32-02db0998c41b",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "config" : {
+          "collectionLayoutDefinition" : {
+            "attributes" : {
+              "contentIndicatorSpacing" : "none",
+              "limitItems" : 5,
+              "pauseButtonPlacement" : "left",
+              "progressionPace" : 5,
+              "shouldAutoScroll" : true,
+              "showPauseButton" : true,
+              "showProgressArrows" : true,
+              "showProgressIndicator" : true,
+              "transitionSpeed" : 600,
+              "transitionType" : "slide"
+            },
+            "componentName" : "forceCommunity:dynamicCollectionCarousel"
+          },
+          "dataProviderDefinition" : {
+            "attributes" : {
+              "dataProviderInfo" : {
+                "apiName" : "Recent_Activities"
+              },
+              "dataProviderType" : "NamedCollection"
+            },
+            "componentName" : "forceCommunity:managedContentCollectionDataProvider"
+          },
+          "itemLayoutDefinition" : {
+            "attributes" : {
+              "additionalLinks" : "{\"links\":[],\"alignment\":\"horizontal\"}",
+              "backgroundPosition" : "center center",
+              "backgroundSize" : "cover",
+              "bannerAspectRatio" : "16:9",
+              "bannerHeight" : "284",
+              "bannerSubTitleTextColor" : "rgb(237, 216, 216)",
+              "bannerTitleTextColor" : "rgb(255, 255, 255)",
+              "callToActionButtonBackgroundColor" : "",
+              "callToActionButtonBackgroundColorHover" : "",
+              "callToActionButtonBorderColor" : "",
+              "callToActionButtonBorderColorHover" : "",
+              "callToActionButtonBorderStyles" : "",
+              "callToActionButtonTextColor" : "",
+              "callToActionButtonTextColorHover" : "rgb(52, 213, 30)",
+              "callToActionLabel" : "View More",
+              "componentHoverEffect" : "zoomIn",
+              "contentWidth" : 80,
+              "dateFormat" : "none",
+              "datetime" : "",
+              "datetimeFontSize" : "regular",
+              "datetimeTextColor" : "#ffffff",
+              "datetimeTextDecoration" : "",
+              "defaultLinksOverrides" : "{\"callToActionLabel\":{\"linkURL\":\"{!CurrentItem.excerpt}\"}}",
+              "displayDayOfWeek" : false,
+              "eyebrowFontSize" : "regular",
+              "eyebrowHighlightColor" : "",
+              "eyebrowText" : "",
+              "eyebrowTextColor" : "#ffffff",
+              "eyebrowTextDecoration" : "",
+              "flagAlignment" : "top left",
+              "flagBackgroundColor" : "#ff0000",
+              "flagBorderColor" : "#ffffff",
+              "flagBorderStyles" : "{\"borderTopLeftRadius\":{\"value\":\"0\"},\"borderTopRightRadius\":{\"value\":\"0\"},\"borderBottomRightRadius\":{\"value\":\"0\"},\"borderBottomLeftRadius\":{\"value\":\"0\"}}",
+              "flagRotation" : 0,
+              "flagSpacing" : "medium",
+              "flagText" : "",
+              "flagTextColor" : "#ffffff",
+              "flagTextDecoration" : "",
+              "hideTextElementsForVideo" : false,
+              "imageAltText" : "",
+              "imageUrl" : "{!CurrentItem.bannerImage.url}",
+              "metadata1HighlightColor" : "",
+              "metadata1Text" : "",
+              "metadata2HighlightColor" : "",
+              "metadata2Text" : "",
+              "metadataFontSize" : "regular",
+              "metadataTextColor" : "#ffffff",
+              "metadataTextDecoration" : "",
+              "overlayBackgroundColor" : "rgba(0, 0, 0, 0.4)",
+              "showButton" : true,
+              "showCaption" : true,
+              "showDateTime" : true,
+              "showEyebrow" : true,
+              "showEyebrowHighlight" : false,
+              "showFlag" : true,
+              "showMetadata1" : true,
+              "showMetadata1Highlight" : false,
+              "showMetadata2" : true,
+              "showMetadata2Highlight" : false,
+              "showTitle" : true,
+              "showTitleHighlight" : false,
+              "subTitle" : "{!CurrentItem.body}",
+              "subTitleFontSize" : "regular",
+              "textAlignment" : "center center",
+              "timeFormat" : "none",
+              "timeZoneDisplay" : "short",
+              "timeZoneOptions" : "none",
+              "title" : "{!CurrentItem.title}",
+              "titleFontSize" : "large",
+              "titleHeadingTag" : "h1",
+              "titleHighlightColor" : "",
+              "titleTextDecoration" : "{\"bold\":true}",
+              "useAspectRatio" : false,
+              "videoUrl" : ""
+            },
+            "componentName" : "forceCommunity:bannerLayout"
+          },
+          "schemaVersion" : "V2.0"
+        }
+      },
+      "componentName" : "forceCommunity:dynamicCollection",
+      "id" : "ad437444-44c2-4763-9ed1-0e2cab1fe182",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "285b10ca-3b25-4e75-921f-a22793caadb2",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "c2e82f12-7df3-4fd1-82b3-2b802d563041",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "3e1d2342-4488-4544-a429-9b4834874d1f",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "95d01747-1aaf-4674-b595-9ae2374677df",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Home",
+  "type" : "view",
+  "viewType" : "home"
+}

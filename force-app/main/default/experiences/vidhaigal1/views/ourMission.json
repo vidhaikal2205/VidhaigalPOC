@@ -1,0 +1,131 @@
+{
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "ff02d429-e4a5-45bb-952c-f8c0d074f784",
+  "label" : "OurMission",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "b00f8553-2971-426b-a56d-60d039120baa",
+          "columns" : [ {
+            "UUID" : "70e32b08-5056-4540-a8d1-19863379baed",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 109
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "b00f8553-2971-426b-a56d-60d039120baa",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<h1 style=\"text-align: center;\"><strong style=\"font-family: tahoma; font-size: 48px;\">Our Mission</strong></h1>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "39b47572-6e25-46c5-b909-3d9c5bed22d2",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "70e32b08-5056-4540-a8d1-19863379baed",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "9407187f-ac06-4944-88b8-1f31ff2361c6",
+          "columns" : [ {
+            "UUID" : "4eb24ccb-9958-4f4e-a547-c4d4500c1613",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "25531919-8bc2-47a1-8d97-a9de37d5f766",
+            "columnKey" : "a3667",
+            "columnName" : "Column 2",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 187
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "9407187f-ac06-4944-88b8-1f31ff2361c6",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p style=\"text-align: center;\"><img class=\"sfdcCbImage\" alt=\"\" src=\"{!contentAsset.Gemini_Generated_Image_9vh6hf9vh6hf.1}\" style=\"width: 509.656px; height: 509.656px;\"></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "953c2c4d-4a05-455b-9e57-85580d596410",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "4eb24ccb-9958-4f4e-a547-c4d4500c1613",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<h3 style=\"text-align: justify;\">&nbsp;&nbsp;&nbsp;</h3><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\">&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: verdana; font-size: 22px;\">To catalyze sustainable human development and socio-economic transformation by strategically investing in underserved populations; ensuring universal access to robust, quality education and foundational preventative and curative healthcare services, thereby equipping individuals with the knowledge, skills, and wellness necessary to escape poverty, secure sustainable livelihoods, and build equitable, self-reliant communities.﻿</span></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "73200a65-e7c6-4372-a500-5cf207775ef3",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "25531919-8bc2-47a1-8d97-a9de37d5f766",
+        "regionLabel" : "Column 2",
+        "regionName" : "a3667",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "7b3db706-8467-46c4-bd46-f23f37b6fb09",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "OurMission"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "836a638e-c064-490c-9d8b-cddddbd6d743",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "d4d116bb-e32c-4901-9dfb-4e81f7dadb19",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-ourmission"
+}

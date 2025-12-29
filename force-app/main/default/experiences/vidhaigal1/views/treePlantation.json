@@ -1,0 +1,170 @@
+{
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "f23458c7-6838-4721-ad7a-2804608d11f6",
+  "label" : "Tree Plantation",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "a2183e57-0f31-4e99-ae05-a1d410d84479",
+          "columns" : [ {
+            "UUID" : "07ed9454-3218-473b-9d93-4c2fd1a98fee",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 78
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "a2183e57-0f31-4e99-ae05-a1d410d84479",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p><strong style=\"font-family: tahoma; font-size: 72px;\">Tree Plantation</strong></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "455fe0d7-f60b-4314-ac38-9c0ad0b4b718",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "07ed9454-3218-473b-9d93-4c2fd1a98fee",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "9c47dfb6-245a-495b-af7b-647cc3b7b14d",
+          "columns" : [ {
+            "UUID" : "e087d333-14af-46c8-9ed9-b6b8a4efb109",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "78fe86bb-6291-4f73-9adc-25af06ea57c3",
+            "columnKey" : "6b106",
+            "columnName" : "Column 2",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "9c47dfb6-245a-495b-af7b-647cc3b7b14d",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p><img class=\"sfdcCbImage\" src=\"{!contentAsset.TP1.1}\" alt=\"\"></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "46a10cc3-8e9a-4783-895e-543ef664f20b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "e087d333-14af-46c8-9ed9-b6b8a4efb109",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p><img class=\"sfdcCbImage\" src=\"{!contentAsset.TP21.1}\" alt=\"\">.</p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "db1f6a08-fbb5-4bff-b261-47e4f4342ea6",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "78fe86bb-6291-4f73-9adc-25af06ea57c3",
+        "regionLabel" : "Column 2",
+        "regionName" : "6b106",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "ab75d2ca-62f2-426d-944e-73121d287444",
+          "columns" : [ {
+            "UUID" : "22e6778e-6b8c-40b9-95a3-9c1014f4f21a",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "ab75d2ca-62f2-426d-944e-73121d287444",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<h4><span style=\"font-size: 20px; font-family: arial;\">Vidhaigal NGO has undertaken a significant initiative to green the landscape across Kanchipuram, Chengalpattu, Thiruvallur, and Chennai districts. Through dedicated efforts, they have planted over 2.5 lakh trees &amp; 4 Lakh Palm seeds, creating numerous urban forests and micro-forests that contribute significantly to environmental conservation and community well-being.</span></h4><h4><br></h4><h4><strong style=\"font-size: 20px; font-family: arial;\">Villages where Mini Forests were created</strong></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Devariyambakkam - 18-acre forest with 17,000 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Vaaranavasi - 3.5-acre mini-forest with 1,000 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Pallavaram - 2-acre mini-forest with 1,000 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Ullavur Government School - mini-forest with 1,000 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Walajabad Church - mini-forest with 500 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Walajabad Veterinary Hospital - mini-forest with 1,000 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Maraimalai Nagar - A mini-forest with 1,000 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Uthiramerur - Two mini-forests, one with 2,000 trees on a 4-acre plot, and another with 1,000 trees on an agricultural land.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Arignar Anna Government Boys Higher Secondary School - mini-forest with 1,000 trees.</span></h4><h4><span style=\"font-size: 20px; font-family: arial;\">Vidhaigal NGO continues to work towards expanding its tree plantation efforts and creating more green spaces across the region.</span></h4><h4><br></h4>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "3d9400af-0129-4cef-9948-a895bd1ed8a1",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "22e6778e-6b8c-40b9-95a3-9c1014f4f21a",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "99c8afe6-8391-4804-a434-3950427553ec",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Tree Plantation"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "a2e5d190-de61-4073-a093-cde7529101be",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9c9746d0-2321-44a3-813a-c92a1a20058f",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-tree-plantation"
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+    <container>vidhaigal</container>
+    <containerType>Network</containerType>
+    <label>Default Navigation</label>
+    <navigationMenuItem>
+        <label>About Us</label>
+        <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/aboutus</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Our Mission</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/ourmission</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Check Status</label>
+        <position>3</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/checkmemberstatus</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Registration</label>
+        <position>4</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/registration</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+</NavigationMenu>

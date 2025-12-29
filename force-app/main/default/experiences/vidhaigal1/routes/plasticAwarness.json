@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "60045510-415a-4032-9652-2e35227c42e8",
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "configurationTags" : [ ],
+  "devName" : "PlasticAwarness__c",
+  "id" : "0ff2b97b-317d-4cbe-a960-93078b98d249",
+  "label" : "Plastic Awarness",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-plastic-awarness",
+  "type" : "route",
+  "urlPrefix" : "plastic-awarness"
+}

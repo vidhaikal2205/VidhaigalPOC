@@ -161,4 +161,6 @@ public class CommunityRegistrationController_Test {
         System.assertEquals(docId, links[0].ContentDocumentId, 'File must match the uploaded one');
     }
     */
+    
+    
 }

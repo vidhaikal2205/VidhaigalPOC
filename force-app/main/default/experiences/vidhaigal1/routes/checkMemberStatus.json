@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "72e0f45c-ac4c-4cbc-b009-213d5479fa91",
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "configurationTags" : [ ],
+  "devName" : "checkMemberStatus__c",
+  "id" : "77e48519-f57c-4a89-a54b-01cb2f90e6a7",
+  "label" : "checkMemberStatus",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-checkmemberstatus",
+  "type" : "route",
+  "urlPrefix" : "checkmemberstatus"
+}

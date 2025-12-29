@@ -1,3 +1,12 @@
+/**
+* @File Name : CommunityMemberConversionService.cls
+* @Description :This class is to get the convert approved community members to contact 
+* @Author :Arthi S
+* @Last Modified On : December 26, 2025
+
+*==============================================================================
+
+**/
 public with sharing class CommunityMemberConversionService {
 
     @AuraEnabled
@@ -11,7 +20,7 @@ public with sharing class CommunityMemberConversionService {
             SELECT Id, Salutation__c, First_Name__c, Last_Name__c, Email__c,
                    Mobile_Number__c, Gender__c, Occupation__c, Annual_Income__c,
                    State__c, Address_Line_1__c, Address_Line_2__c,
-                   City__c, Zipcode__c,Country__c
+                   City__c, Zipcode__c,Country__c,Password__c
             FROM Community_Member_Registration_Form__c
             WHERE Id = :registrationId
             LIMIT 1
@@ -66,6 +75,9 @@ public with sharing class CommunityMemberConversionService {
         con.MailingPostalCode = String.valueOf(reg.Zipcode__c);
         con.MailingCountry = reg.Country__c;
         con.RecordTypeId = contactRtId;
+        con.Member_Status__c='Active';
+        con.Password__c =reg.Password__c ;
+        
 	    System.debug('Contact before insert: ' + con);
         insert con;
         System.debug('Contact successfully created. Contact Id: ' + con.Id);      

@@ -1,0 +1,170 @@
+{
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "60045510-415a-4032-9652-2e35227c42e8",
+  "label" : "Plastic Awarness",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "b4876518-40ff-48b0-9464-ee0dbe0aa6cd",
+          "columns" : [ {
+            "UUID" : "07cfe95c-a4f1-4265-bf16-6edbe4aefa83",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 79
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "b4876518-40ff-48b0-9464-ee0dbe0aa6cd",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p><strong style=\"font-family: tahoma; font-size: 72px;\">Plastic Awareness Campaign</strong></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "8d06d1c9-aa12-4833-a92e-09393366e219",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "07cfe95c-a4f1-4265-bf16-6edbe4aefa83",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "56714278-286a-4634-90cc-ff25e0cde2c8",
+          "columns" : [ {
+            "UUID" : "1acf9dc9-6fca-4922-a5b6-71cf4c8a3070",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "d740c4b5-2129-4af8-835b-2ee2d5393212",
+            "columnKey" : "122e6",
+            "columnName" : "Column 2",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "56714278-286a-4634-90cc-ff25e0cde2c8",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p style=\"text-align: center;\"><img class=\"sfdcCbImage\" src=\"{!contentAsset.PA1.1}\" alt=\"\" style=\"width: 413.078px; height: 257.453px;\"></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "2416e9b9-296d-4370-b527-934025dd8fe2",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1acf9dc9-6fca-4922-a5b6-71cf4c8a3070",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p><img class=\"sfdcCbImage\" src=\"{!contentAsset.PA2.1}\" alt=\"\" style=\"width: 464.578px; height: 261.328px;\"></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "b058f833-71af-4895-bb3c-8a6126cb0b4f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "d740c4b5-2129-4af8-835b-2ee2d5393212",
+        "regionLabel" : "Column 2",
+        "regionName" : "122e6",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "1b480f2c-8466-4832-b1ff-b3a1433b6064",
+          "columns" : [ {
+            "UUID" : "7e7aae42-85c3-4eef-8d08-c8825969063c",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "1b480f2c-8466-4832-b1ff-b3a1433b6064",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<ul><li><strong style=\"font-family: arial; font-size: 20px;\">Walajabad Bus Stand:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">A thousand yellow cloth bags were distributed to the public at the Walajabad bus stand, emphasizing the need for cloth bags and creating awareness.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">Oragadam:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">A rally was held to highlight the harmful effects of plastics, and over a thousand yellow cloth bags were distributed in Oragadam, an industrial area.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">Triveni Academy:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">A yellow cloth bag awareness campaign was conducted among students at Triveni Academy.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">Varanavasi Government Primary School:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">A yellow cloth bag awareness campaign was conducted at Varanavasi Government Primary School.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">Agaram Government Primary School:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">Students were made aware of the harmful effects of plastics at Agaram Government Primary School.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">Thenneri Government Middle School:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">An awareness campaign was conducted at Thenneri Government Middle School.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">Arignar Anna Government Boys Higher Secondary School:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">A cloth bag awareness campaign was conducted at Arignar Anna Government Boys Higher Secondary School.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">RCM Middle School:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">Students were made aware of the benefits of cloth bags at RCM Middle School.</span></li><li><strong style=\"font-family: arial; font-size: 20px;\">St. Joseph's Matriculation Higher Secondary School:&nbsp;</strong><span style=\"font-family: arial; font-size: 20px;\">A yellow cloth bag awareness campaign was conducted at St. Joseph's Matriculation Higher Secondary School.</span></li></ul><p style=\"text-align: justify;\">&nbsp;&nbsp;&nbsp;<span style=\"font-family: arial; font-size: 20px;\">In essence, the Vidhaigal NGO has been actively promoting the use of cloth bags and educating the public about the detrimental effects of plastics through various campaigns in schools and public places.</span></p><p>&nbsp;</p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "97f7e8e0-46cf-4a76-a661-621a1f7652ec",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "7e7aae42-85c3-4eef-8d08-c8825969063c",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "1fe67321-7164-4131-986f-478a21345c7e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Plastic Awarness"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "de70aeef-db1d-4c4e-b0d8-55d22674ae63",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e2030c30-8e96-4801-b8f9-1526cb9c0ee0",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-plastic-awarness"
+}

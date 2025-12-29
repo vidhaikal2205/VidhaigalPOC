@@ -1,0 +1,70 @@
+{
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "componentName" : "siteforce:sldsThreeCol363Layout",
+  "dataProviders" : [ ],
+  "id" : "eac639cf-79fc-4325-9f91-dcd02d079a2f",
+  "label" : "Registration",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "bannerText" : "",
+        "bannerTextWithKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineArticles\">articles</a> and <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "bannerTextWithoutKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "pageType" : "",
+        "showSubTopics" : true,
+        "title" : "Community Member Registration",
+        "uniqueNameOrId" : ""
+      },
+      "componentName" : "forceCommunity:headline",
+      "id" : "e409f2ba-0e0b-4f06-9574-28092d0f4a4a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "baba0cdf-2d66-4650-a098-2f7a33034809",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : { },
+      "componentName" : "c:registrationForm",
+      "id" : "514cb4f0-6216-48a8-b117-3a0181e3aa0c",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a4ac4bd1-4829-4985-995a-6f32c2fc26a7",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "a8e2cf98-6991-4aac-8fb4-3815defd331a",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "cfc583aa-26db-4b94-a64c-d98070a9c152",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Registration"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "26a0ffc0-78f9-47c9-94fb-48e33c51eff5",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "ecc6eb0c-a499-4d0c-b4b2-3ac61c81b908",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  }, {
+    "id" : "7fe41630-e18b-47d0-ae38-c52f9d904bdc",
+    "regionName" : "sidebarAlt",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-registration"
+}

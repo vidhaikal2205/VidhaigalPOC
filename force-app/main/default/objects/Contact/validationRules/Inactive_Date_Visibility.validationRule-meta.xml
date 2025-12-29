@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive_Date_Visibility</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Member_Status__c , &apos;InActive&apos;) &amp;&amp; ISCHANGED( Inactive_Date__c )&amp;&amp; NOT(ISNEW()) &amp;&amp;   NOT(ISBLANK(PRIORVALUE(Inactive_Date__c )))</errorConditionFormula>
+    <errorDisplayField>Inactive_Date__c</errorDisplayField>
+    <errorMessage>InActive Date Cannot be editted</errorMessage>
+</ValidationRule>

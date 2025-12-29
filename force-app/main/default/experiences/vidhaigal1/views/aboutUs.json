@@ -1,0 +1,131 @@
+{
+  "appPageId" : "9b78cffe-d1b2-46fe-86e0-de939fb7630d",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "40b28532-93a1-4e1b-a9c6-4eded906acdd",
+  "label" : "AboutUs",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "fee3fe80-12bf-4ead-9155-54b4e55bd3a4",
+          "columns" : [ {
+            "UUID" : "bdbc45de-b1f5-4e3a-86a0-7d09c0ef3870",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 109
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "fee3fe80-12bf-4ead-9155-54b4e55bd3a4",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<h1 style=\"text-align: center;\"><strong style=\"font-size: 72px; font-family: tahoma;\">About Us</strong></h1>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "839491bf-90b7-43f8-b801-8da30fe6ed82",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "bdbc45de-b1f5-4e3a-86a0-7d09c0ef3870",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "d52d5c2b-9f7f-4009-857b-329db0ae4975",
+          "columns" : [ {
+            "UUID" : "898dab88-c032-4cf0-9c80-176d24382d39",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          }, {
+            "UUID" : "337d65a7-2451-46c5-8f65-6b1f0317f94b",
+            "columnKey" : "0a8d0",
+            "columnName" : "Column 2",
+            "columnWidth" : "6",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "d52d5c2b-9f7f-4009-857b-329db0ae4975",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<div class=\"sfdcCbVideoContainer\"><iframe class=\"sfdcCbVideo\" allowfullscreen=\"true\" width=\"100%\" title=\"Video from https://www.youtube.com/embed/VfzL5tBMuj8\" src=\"https://www.youtube.com/embed/VfzL5tBMuj8\"></iframe></div><p>&nbsp;</p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "9d3b44c9-65d5-4e6f-b9d0-081288425084",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "898dab88-c032-4cf0-9c80-176d24382d39",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      }, {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<p style=\"text-align: justify;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-size: 20px; font-family: sans-serif;\">We are proud to say that we are one of the few facilities in the city that rescues and provides care for the destitute and dying from the streets. Our patients are referred by social workers and organizations, and we have helped individuals like 65-year-old Murugaiyan, who was living alone after his wife separated from him and was referred from Villupuram. Most of our residents are orphans and abandoned individuals.</span></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-size: 20px; font-family: sans-serif;\">At Nethravathi Pain, Palliative Care and Rehabilitation Center, our dedicated team of medical professionals provides round-the-clock care for our patients. We take turns to visit the facility and provide medical care, and a team of staffers is employed to support our efforts. We provide palliative care and pain management for the terminally ill and rehabilitation services for those who suffer from strokes.</span></p><p style=\"text-align: justify;\"><br></p><p style=\"text-align: justify;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-size: 20px; font-family: sans-serif;\">Our organization is also committed to providing medical services to a number of old age homes in the city and conducting medical camps in the villages around Madurai.</span></p>"
+          },
+          "componentName" : "forceCommunity:richTextInline",
+          "id" : "cd67bf1a-cd3d-4c87-8127-66ed6c14c81a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "337d65a7-2451-46c5-8f65-6b1f0317f94b",
+        "regionLabel" : "Column 2",
+        "regionName" : "0a8d0",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e0cac002-d700-45dc-91bf-c2ff6e3cca91",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "AboutUs"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "16107adf-c1d1-4297-bddd-8040c21384ce",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fcd88aee-fdc0-4973-97c4-54045ea26b68",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-aboutus"
+}

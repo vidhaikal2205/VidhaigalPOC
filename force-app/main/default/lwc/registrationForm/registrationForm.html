@@ -169,7 +169,44 @@
                     required>
                     </lightning-input>
 
-                    <!-- 5.7 Proof of Identity -->
+
+
+                   <!-- 5.7 Password -->
+                   <!-- 5.7 Password -->
+                <lightning-input
+                 label="Password"
+                  type={passwordType}
+                  data-field="password"
+                  value={form.password}
+                   onchange={handlePasswordChange}
+                  required
+pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,14}$"
+message-when-pattern-mismatch="Password must be 8–14 characters and include uppercase, lowercase, number, and special character.">
+</lightning-input>
+
+<lightning-button-icon
+    icon-name={passwordIcon}
+    alternative-text="Toggle password visibility"
+    onclick={togglePassword}
+    variant="bare"
+    class="slds-m-left_x-small">
+</lightning-button-icon>
+
+<lightning-input
+    label="Confirm Password"
+    type={passwordType}
+    data-field="confirmPassword"
+    value={form.confirmPassword}
+    onchange={handleConfirmPasswordChange}
+    required>
+</lightning-input>
+<template if:true={passwordMismatch}>
+    <div class="slds-text-color_error slds-m-top_x-small">
+        Passwords do not match
+    </div>
+</template>
+
+                    <!-- 5.9 Proof of Identity -->
                     <lightning-combobox
                      label="Proof of Identity"
                       data-field="proofOfIdentity" 
@@ -178,10 +215,8 @@
                       onchange={handleChange} 
                       required>
                     </lightning-combobox>
-
-                    
-                    
-                    <!-- 5.8 File Upload -->
+                  
+                    <!-- 6 File Upload -->
                     <div style="margin-top:10px;">
                         <label>Upload ID Proof (Max File upload size 5MB)<span style="color:red">*</span></label>
                         <input type="file" onchange={handleFileChange} accept=".pdf,.jpg,.jpeg,.png" />
@@ -192,13 +227,15 @@
                             </div>
                         </template>
                     </div>>
+                    
 
                     
                 </div>
 
-            </div> <!-- END GRID -->
+            </div> 
+            <!-- END GRID -->
 
-            <!-- 6. SUBMIT BUTTON -->
+            <!-- 7. SUBMIT BUTTON -->
             <div style="text-align:center; margin-top:25px;">
                 <lightning-button 
                     label="Submit" 
@@ -208,6 +245,7 @@
                     class="submit-btn">
                 </lightning-button>
             </div>
+
 
         </lightning-card>
     </div>
