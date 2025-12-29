@@ -91,7 +91,25 @@
         <name>Network</name>
     </types>
 
+    <!--Flows-->
+    <types>
+    <members>Delete_the_Approved_and_Rejected_Resigeter_Community_User</members>
+    <name>Flow</name>
+    </types>
 
+    <types>
+    <members>Get_and_Update_Inactive_Reason_Flow</members>
+    <name>Flow</name>
+    </types>
+    <types>
+    <members>Send_Email_after_Approved_RTF</members>
+    <name>Flow</name>
+    </types>
+
+   <types>
+    <members>Send_Welcome_Email_to_the_community_memmber</members>
+    <name>Flow</name>
+    </types>
    
     <version>65.0</version>
 </Package>

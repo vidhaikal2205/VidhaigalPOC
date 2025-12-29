@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Add the ContentDocument ids to a collection variable</description>
+        <name>Add_the_ContentDocument_ids_to_a_collection_variable</name>
+        <label>Add the ContentDocument ids to a collection variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>StoreContentDocumentIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_through_the_ContentDocument_Link_records.ContentDocumentId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_the_ContentDocument_Link_records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Store Ids in Text Collection variable</description>
+        <name>Store_Community_member_form_Ids_in_Text_Collection_variable</name>
+        <label>Store Community member form Ids in Text Collection variable</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>CommunityRegistartionFormIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_through_community_records.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_community_records</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <description>Check if there are any community records</description>
+        <name>Check_if_there_are_any_community_records</name>
+        <label>Check if there are any community records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>No records found</defaultConnectorLabel>
+        <rules>
+            <name>CommunityMemberrecordsfound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RecordtoDelete</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Loop_through_community_records</targetReference>
+            </connector>
+            <label>Community Member records found</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Deletion</name>
+        <label>Deletion</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Copy_1_of_NeeddtoDeleteRecords</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_community_member_content_Doc_record_exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_ContentDocument_Records</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>NeeddtoDeleteRecords</targetReference>
+            </connector>
+            <label>If community member - content Doc record exists</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Delete the Approved and Rejected Resigeter Community User {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delete the Approved and Rejected Resigeter Community User and the uploaded files</label>
+    <loops>
+        <description>Loop through community records to get the corresponding ContentDocumentLink records</description>
+        <name>Loop_through_community_records</name>
+        <label>Loop through community records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>RecordtoDelete</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Store_Community_member_form_Ids_in_Text_Collection_variable</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_the_ContentDocumentLink_Record</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <description>Loop through the ContentDocument Link records</description>
+        <name>Loop_through_the_ContentDocument_Link_records</name>
+        <label>Loop through the ContentDocument Link records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>StoreContentDocumentLinkrecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Add_the_ContentDocument_ids_to_a_collection_variable</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_ContentDocument_Records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordDeletes>
+        <name>Copy_1_of_NeeddtoDeleteRecords</name>
+        <label>Copy 1 of NeeddtoDeleteRecords</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>RecordtoDelete</inputReference>
+    </recordDeletes>
+    <recordDeletes>
+        <name>Delete_the_contentDocuments</name>
+        <label>Delete the contentDocuments</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>Get_ContentDocument_Records</inputReference>
+    </recordDeletes>
+    <recordDeletes>
+        <name>NeeddtoDeleteRecords</name>
+        <label>NeeddtoDeleteRecords</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Delete_the_contentDocuments</targetReference>
+        </connector>
+        <inputReference>RecordtoDelete</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Commmunity_Records</name>
+        <label>Get Commmunity Records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_there_are_any_community_records</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Approved</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Rejected</stringValue>
+            </value>
+        </filters>
+        <object>Community_Member_Registration_Form__c</object>
+        <outputReference>RecordtoDelete</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <description>Get ContentDocument Records</description>
+        <name>Get_ContentDocument_Records</name>
+        <label>Get ContentDocument Records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Deletion</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>StoreContentDocumentIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ContentDocument</object>
+        <queriedFields>Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get the ContentDocumentLink Records for each community member form</description>
+        <name>Get_the_ContentDocumentLink_Record</name>
+        <label>Get the ContentDocumentLink Records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_the_ContentDocument_Link_records</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>CommunityRegistartionFormIds</elementReference>
+            </value>
+        </filters>
+        <object>ContentDocumentLink</object>
+        <outputReference>StoreContentDocumentLinkrecords</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>ContentDocumentId</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Commmunity_Records</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Once</frequency>
+            <startDate>2025-12-29</startDate>
+            <startTime>15:15:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Store the Community Registration form ids</description>
+        <name>CommunityRegistartionFormIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>holds all the contentDocument records that need to be deleted</description>
+        <name>ContentDocuments</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <objectType>ContentDocument</objectType>
+    </variables>
+    <variables>
+        <name>RecordtoDelete</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Community_Member_Registration_Form__c</objectType>
+    </variables>
+    <variables>
+        <description>Collection variable to store content Document Ids</description>
+        <name>StoreContentDocumentIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Variable to store ContentDocumentLink records</description>
+        <name>StoreContentDocumentLinkrecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>ContentDocumentLink</objectType>
+    </variables>
+</Flow>
