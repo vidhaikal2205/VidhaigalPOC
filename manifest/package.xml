@@ -110,6 +110,18 @@
     <members>Send_Welcome_Email_to_the_community_memmber</members>
     <name>Flow</name>
     </types>
+
+    <!--Email Templates-->
+    <types>
+    <members>unfiled$public/Status_Approved_Email_Template</members>
+    <name>EmailTemplate</name>
+    </types>
+    <types>
+    <members>unfiled$public/Status_Rejected_Email_Template</members>
+    <name>EmailTemplate</name>
+    </types>
+
+    
    
     <version>65.0</version>
 </Package>

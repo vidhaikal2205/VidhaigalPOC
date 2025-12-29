@@ -1,0 +1,13 @@
+Dear {!Community_Member_Registration_Form__c.First_Name__c} {!Community_Member_Registration_Form__c.Last_Name__c},
+        Your application for becoming as a Community member of our NGO was rejected due to the following reason 
+
+Reason: {!Community_Member_Registration_Form__c.Rejection_Reason__c}
+
+ Kindly do a fresh registration with proper document. 
+                                                  Thank you
+
+
+with Regards,
+Vidhaigal NGO
+Madurai
+Ph.No:9632587411
