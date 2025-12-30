@@ -18,10 +18,12 @@ public class CommunityMemberController
      
         return  [SELECT Id, First_Name__c,Last_Name__c, Email__c, Approval_Status__c, Mobile_Number__c, CreatedDate,Address_Line_1__c,Gender__c,State__c, City__c,Zipcode__c,Proof_of_Identity__c,Occupation__c,Country__c  
                  FROM Community_Member_Registration_Form__c
+                 WITH SECURITY_ENFORCED
                  WHERE Approval_Status__c = 'Pending'
                  ORDER BY CreatedDate DESC];
     }
     
+    //Method for updating the status of the community member
     @AuraEnabled
     public static void updateStatus(Id recordId, String status, string approveReason, string rejectReason, string addComment)
     {
